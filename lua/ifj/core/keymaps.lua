@@ -6,6 +6,10 @@ local keymap = vim.keymap -- for conciseness
 -- General Keymaps
 ---------------------
 
+-- Jump start/ end of line
+keymap.set("n", "<C-l>", "$")
+keymap.set("n", "<C-h>", "0")
+
 -- jump multiple liness
 keymap.set("n", "<C-k>", "7k")
 keymap.set("n", "<C-j>", "7j")
@@ -50,7 +54,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window max
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
--- keymap.set("n", "<leader>f", ":NvimTreeFocus<CR>")
+keymap.set("n", "<leader>fe", ":NvimTreeFocus<CR>")
 keymap.set("n", "<leader>f", ":NvimTreeFindFile<CR>")
 
 -- telescope
