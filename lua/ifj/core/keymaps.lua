@@ -7,7 +7,11 @@ local keymap = vim.keymap -- for conciseness
 ---------------------
 
 -- jump multiple liness
-keymap.set("n", "<C-k>", "7k", {remap = true, silent = true})
+keymap.set("n", "<C-k>", "7k")
+keymap.set("n", "<C-j>", "7j")
+
+keymap.set("i", "<C-l>", "<Right>")
+keymap.set("i", "<C-h>", "<Left>")
 
 -- Move selected line / block of text in visual mode
 
@@ -35,7 +39,6 @@ keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 ----------------------
