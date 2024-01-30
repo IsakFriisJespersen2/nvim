@@ -2,13 +2,16 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
+vim.opt.swapfile = false -- disable swap files
+local opts = { noremap = true, silent = true }
+
 ---------------------
 -- General Keymaps
 ---------------------
 
 -- Jump start/ end of line
-keymap.set("n", "<C-l>", "$")
-keymap.set("n", "<C-h>", "0")
+keymap.set({ "n", "v" }, "<C-l>", "$")
+keymap.set({ "n", "v" }, "<C-h>", "0")
 
 -- jump multiple liness
 keymap.set("n", "<C-k>", "7k")
@@ -16,6 +19,9 @@ keymap.set("n", "<C-j>", "7j")
 
 keymap.set("i", "<C-l>", "<Right>")
 keymap.set("i", "<C-h>", "<Left>")
+
+-- Remove highlight after search
+keymap.set("n", "<esc>", ":noh<cr>", opts)
 
 -- Move selected line / block of text in visual mode
 
