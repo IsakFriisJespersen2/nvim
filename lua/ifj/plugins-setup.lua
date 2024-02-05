@@ -28,6 +28,9 @@ end
 
 -- add list of plugins to install
 return packer.startup(function(use)
+	-- TS comments
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
 
