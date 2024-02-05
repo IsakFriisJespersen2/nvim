@@ -53,9 +53,6 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- bufferline
-	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
-
 	use("szw/vim-maximizer") -- maximizes and restores current window
 
 	-- essential plugins
