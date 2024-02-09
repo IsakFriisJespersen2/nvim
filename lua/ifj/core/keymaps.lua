@@ -9,6 +9,8 @@ local opts = { noremap = true, silent = true }
 -- General Keymaps
 ---------------------
 
+keymap.set("n", "<C-r>", "<Plug>RestNvim")
+
 -- Jump start/ end of line
 keymap.set({ "n", "v" }, "<C-l>", "$")
 keymap.set({ "n", "v" }, "<C-h>", "0")

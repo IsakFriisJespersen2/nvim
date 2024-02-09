@@ -28,6 +28,8 @@ end
 
 -- add list of plugins to install
 return packer.startup(function(use)
+	use("rest-nvim/rest.nvim", { requires = { "nvim-lua/plenary.nvim" } })
+
 	-- TS comments
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
