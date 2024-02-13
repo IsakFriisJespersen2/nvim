@@ -28,6 +28,8 @@ end
 
 -- add list of plugins to install
 return packer.startup(function(use)
+	use("folke/tokyonight.nvim")
+
 	use("rest-nvim/rest.nvim", { requires = { "nvim-lua/plenary.nvim" } })
 
 	-- TS comments
