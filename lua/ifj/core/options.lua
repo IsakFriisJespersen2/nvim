@@ -2,7 +2,7 @@ local opt = vim.opt -- for conciseness
 
 --line numbers
 opt.relativenumber = true
-opt.number = tru
+opt.number = true
 
 -- tabs & indetation
 opt.tabstop = 2
@@ -36,5 +36,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append("-")
+
+opt.termguicolors = true
 
 -- vim.cmd("highlight Cursor guifg=NONE guibg=red")

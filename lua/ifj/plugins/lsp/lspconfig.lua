@@ -74,6 +74,12 @@ lspconfig["helm_ls"].setup({
 	on_attach = on_attach,
 })
 
+-- configure helm server
+lspconfig["yamlls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- configure typescript server with plugin
 typescript.setup({
 	server = {
