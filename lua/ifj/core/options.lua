@@ -40,3 +40,6 @@ opt.iskeyword:append("-")
 opt.termguicolors = true
 
 -- vim.cmd("highlight Cursor guifg=NONE guibg=red")
+vim.cmd([[
+  hi! VM_Mono guibg=Orange60 guifg=Black gui=NONE
+]])
