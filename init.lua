@@ -1,17 +1,21 @@
-require("ifj.plugins-setup")
-require("ifj.core.options")
-require("ifj.core.keymaps")
-require("ifj.core.colorscheme")
-require("ifj.plugins.comment")
-require("ifj.plugins.nvim-tree")
-require("ifj.plugins.lualine")
-require("ifj.plugins.telescope")
-require("ifj.plugins.nvim-cmp")
-require("ifj.plugins.lsp.mason")
-require("ifj.plugins.lsp.lspsaga")
-require("ifj.plugins.lsp.lspconfig")
-require("ifj.plugins.lsp.null-ls")
-require("ifj.plugins.autopairs")
-require("ifj.plugins.treesitter")
-require("ifj.plugins.gitsigns")
-require("ifj.plugins.rest")
+require "core"
+
+local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
+
+if custom_init_path then
+  dofile(custom_init_path)
+end
+
+require("core.utils").load_mappings()
+
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+-- bootstrap lazy.nvim!
+if not vim.loop.fs_stat(lazypath) then
+  require("core.bootstrap").gen_chadrc_template()
+  require("core.bootstrap").lazy(lazypath)
+end
+
+dofile(vim.g.base46_cache .. "defaults")
+vim.opt.rtp:prepend(lazypath)
+require "plugins"
