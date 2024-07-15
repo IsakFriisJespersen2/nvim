@@ -8,18 +8,18 @@ local opts = { noremap = true, silent = true }
 ---------------------
 -- General Keymaps
 ---------------------
--- Define the keybindings
+--
 keymap.set({ "n" }, "º", ":call vm#commands#add_cursor_up(0, v:count1)<cr>", { noremap = true, silent = true })
 
 keymap.set({ "n" }, "¬", ":call vm#commands#add_cursor_down(0, v:count1)<cr>", { noremap = true, silent = true })
 
 -- Jump start/ end of line
-keymap.set({ "n", "v" }, "ﬁ", "$")
-keymap.set({ "n", "v" }, "˛", "0")
+keymap.set({ "n", "v" }, "<C-l>", "$")
+keymap.set({ "n", "v" }, "<C-h>", "0")
 
 -- jump multiple liness
-keymap.set("n", "ª", "7k", opts)
-keymap.set("n", "√", "7j", opts)
+keymap.set("n", "<C-J>", "7j", opts)
+keymap.set("n", "<C-K>", "7k", opts)
 
 keymap.set("i", "<C-l>", "<Right>")
 keymap.set("i", "<C-h>", "<Left>")
@@ -31,6 +31,7 @@ keymap.set("n", "<esc>", ":noh<cr>", opts)
 
 keymap.set("x", "K", ":move '<-2<CR>gv-gv")
 keymap.set("x", "J", ":move '>+1<CR>gv-gv")
+
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>")
 

@@ -28,10 +28,6 @@ end
 
 -- add list of plugins to install
 return packer.startup(function(use)
-	use("folke/tokyonight.nvim")
-
-	use("rest-nvim/rest.nvim", { requires = { "nvim-lua/plenary.nvim" } })
-
 	-- TS comments
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
@@ -39,8 +35,6 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
-
-	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 
 	use({
 		"alexghergh/nvim-tmux-navigation",
@@ -51,10 +45,10 @@ return packer.startup(function(use)
 				disable_when_zoomed = true, -- defaults to false
 			})
 
-			vim.keymap.set("n", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
-			vim.keymap.set("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
-			vim.keymap.set("n", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
-			vim.keymap.set("n", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+			vim.keymap.set("n", "♠", nvim_tmux_nav.NvimTmuxNavigateLeft)
+			vim.keymap.set("n", "♡", nvim_tmux_nav.NvimTmuxNavigateDown)
+			vim.keymap.set("n", "♡", nvim_tmux_nav.NvimTmuxNavigateUp)
+			vim.keymap.set("n", "♤", nvim_tmux_nav.NvimTmuxNavigateRight)
 			vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
 			vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
 		end,
@@ -79,7 +73,7 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 
 	-- fuzzy finding w/ telescope
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
 	-- autocompletion
@@ -142,9 +136,12 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-	use("lewis6991/gitsigns.nvim") -- OPTIONAL: for git status
 
 	use("mg979/vim-visual-multi")
+	use("f-person/git-blame.nvim")
+
+	use("folke/tokyonight.nvim")
+	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 
 	if packer_bootstrap then
 		require("packer").sync()
