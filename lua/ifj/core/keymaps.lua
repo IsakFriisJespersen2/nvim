@@ -17,7 +17,7 @@ keymap.set("i", "<C-l>", "<Right>")
 keymap.set("i", "<C-h>", "<Left>")
 
 -- Remove highlight after search
-keymap.set("n", "<esc>", ":noh<cr>", opts)
+keymap.set("n", "<esc>", ":noh<cr>")
 
 -- Move selected line / block of text in visual mode
 keymap.set("x", "K", ":move '<-2<CR>gv-gv")
